@@ -9,8 +9,8 @@
 #' @export
 #'
 mol_from_smiles <- function(smiles){
-    parse.smiles(smiles) %>%
-        generate.2d.coordinates()
+    smi <- parse.smiles(smiles) 
+    generate.2d.coordinates(smi[[1]]) #take the first of the list
 }
 
 #' process_molecule
