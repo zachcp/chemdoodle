@@ -1,7 +1,9 @@
-library(rcdk)
-library(dplyr)
-library(RJSONIO)
-
+#' mol_from_smiles
+#' 
+#' get an AtomContainer with 2d cords from a smiles string
+#'  
+#' @importFrom rcdk parse.smiles
+#' @importFrom rcdk generate.2d.coordinates
 #' 
 #' @return IAtomContainer with coordinates
 #' @export
@@ -11,6 +13,12 @@ mol_from_smiles <- function(smiles){
         generate.2d.coordinates()
 }
 
+#' process_molecule
+#' 
+#' create JSON from an AtomContainer
+#' 
+#' @importFrom rcdk get.atoms
+#' @importFrom rcdk get.bonds
 #' 
 #' @return list compatable with ChemDoodle Webcomponenets API
 #' 
@@ -43,7 +51,11 @@ process_molecule <- function(mol){
          b = lapply(bonds,process_bond))
 }
 
+#' smiles_to_json
 #'
+#' smiles string -> chemdoodle JSON
+#' 
+#' @importFrom RJSONIO toJSON
 #' @export
 smiles_to_json <- function(smiles){
     smiles %>%

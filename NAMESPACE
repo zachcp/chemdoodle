@@ -2,5 +2,12 @@
 
 export(chemdoodle)
 export(chemdoodleOutput)
+export(mol_from_smiles)
 export(renderChemdoodle)
+export(smiles_to_json)
 import(htmlwidgets)
+importFrom(RJSONIO,toJSON)
+importFrom(rcdk,generate.2d.coordinates)
+importFrom(rcdk,get.atoms)
+importFrom(rcdk,get.bonds)
+importFrom(rcdk,parse.smiles)
