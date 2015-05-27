@@ -32,23 +32,26 @@ process_molecule <- function(mol){
         coord <- atom$getPoint2d()
         x = coord$x
         y = coord$y
-        list(x = coord$x,
-             y = coord$y,
-             l = atom$getSymbol())
+        data.frame(x = coord$x,
+                   y = coord$y,
+                   l = atom$getSymbol())
     }
     
     process_bond <- function(bond, mol= mol){
-        order <- bond$getOrder()$ordinal()
+        order <- bond$getOrder()$ordinal() + 1
         bondatoms <- get.atoms(bond)
         source_atom = bondatoms[[1]]
         target_atom = bondatoms[[2]]
-        list(o = order,
-             b = which(atomhashes == source_atom$hashCode()),
-             e = which(atomhashes == target_atom$hashCode()))
+        data.frame(o = order,
+                   b = which(atomhashes == source_atom$hashCode()),
+                   e = which(atomhashes == target_atom$hashCode()))
     }
     
-    list(a = lapply(atoms,process_atom),
-         b = lapply(bonds,process_bond))
+    atomdata = Reduce(rbind, Map(process_atom, atoms))
+    bonddata = Reduce(rbind, Map(process_bond, bonds))
+    
+    list(m= list(list(a = atomdata, b = bonddata)))
+
 }
 
 #' smiles_to_json
@@ -60,8 +63,9 @@ process_molecule <- function(mol){
 smiles_to_json <- function(smiles){
     smiles %>%
         mol_from_smiles() %>%
-        process_molecule() %>%
-        toJSON()
+        process_molecule() 
+    #%>%
+     #   toJSON()
 }
 
 # "CCCNCNCNCC" %>%

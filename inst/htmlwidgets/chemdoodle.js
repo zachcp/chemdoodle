@@ -16,8 +16,9 @@ HTMLWidgets.widget({
     },
     
     renderValue: function(el, x, instance) {
-        var mol = x.json;
-        
+        var x = x;
+        console.log(x);
+
         var viewercanvas = new ChemDoodle.ViewerCanvas("viewer", x.width, x.height);
         viewercanvas.specs.bonds_width_2D = 0.6;
         viewercanvas.specs.bonds_saturationWidth_2D = 0.18;
@@ -30,7 +31,6 @@ HTMLWidgets.widget({
         caffeine.scaleToAverageBondLength(14.4);
         viewercanvas.loadMolecule(caffeine);
         
-        
         var viewercanvas1 = new ChemDoodle.ViewerCanvas("viewer1", x.width, x.height);
         viewercanvas1.specs.bonds_width_2D = 0.6;
         viewercanvas1.specs.bonds_saturationWidth_2D = 0.18;
@@ -38,19 +38,11 @@ HTMLWidgets.widget({
         viewercanvas1.specs.atoms_font_size_2D = 10;
         viewercanvas1.specs.atoms_font_families_2D = ['Helvetica', 'Arial', 'sans-serif'];
         viewercanvas1.specs.atoms_displayTerminalCarbonLabels_2D = true;
-        console.log(mol);
-        var mol = new ChemDoodle.io.JSONInterpreter().molFrom(x.json);
+        var mol = new ChemDoodle.io.JSONInterpreter().molFrom( x.json );
         console.log(mol);
         viewercanvas1.loadMolecule(mol);
         console.log(mol);
         el.innerText = x.message;
         el.innerText = x.json;
-        
-        
-        
-        
-    },
-    
-
-    
+    }
 });
