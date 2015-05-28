@@ -1,10 +1,15 @@
 Package: chemdoodle
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Htmlwigdets interace to Chemdoodel Web Components
 Version: 0.1
 Date: 2015-05-25
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Zach Charlop-Powers
+Maintainer: Zach Charlop-Powers <zcharlop@rockefeller.edu>
+Description: Create nice looking HTML-based molecules
+License: GPL
 LazyData: TRUE
+Imports:
+    htmlwidgets (>= 0.4),
+    rcdk (>= 3.3.0),
+    rcdklibs (>= 1.5.8.4),
+    dplyr(>= 0.4.0)

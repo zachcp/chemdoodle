@@ -9,13 +9,21 @@ chemdoodle <- function(message, width = NULL, height = NULL) {
 
   # forward options using x
   x = list(
-    message = message
+    message = message,
+    width=width,
+    height=height,
+    json = smiles_to_json("CCC")
+    #json = jsonlite::toJSON(list(m= c( a=(y=0,x=0))))
+    
   )
-
+  
+  #modify JSON serialization
+  attr(x, 'TOJSON_ARGS') <- list(dataframe=c("rows"))
+  
   # create widget
   htmlwidgets::createWidget(
     name = 'chemdoodle',
-    x,
+    x = x,
     width = width,
     height = height,
     package = 'chemdoodle'
