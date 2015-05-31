@@ -58,6 +58,7 @@ process_molecule <- function(mol){
 #'
 #' smiles string -> chemdoodle JSON
 #'
+#' @importFrom dplyr %>%
 #' @export
 smiles_to_json <- function(smiles){
     smiles %>%
