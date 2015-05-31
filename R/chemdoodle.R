@@ -1,20 +1,18 @@
-#' <Add Title>
+#' ChemDoodle Viewer
 #'
-#' <Add Description>
+#' Widget that accepts a SMILES string and visualizes it using ChemDoodle
 #'
 #' @import htmlwidgets
 #'
 #' @export
-chemdoodle <- function(message, width = NULL, height = NULL) {
+chemdoodle <- function(smiles, width = 500, height = 500, bondscale=14.4) {
 
   # forward options using x
   x = list(
-    message = message,
     width = width,
-    height=height,
-    json = smiles_to_json("CC")
-    #json = jsonlite::toJSON(list(m= c( a=(y=0,x=0))))
-
+    height = height,
+    json = smiles_to_json(smiles),
+    bondscale = bondscale
   )
 
   #modify JSON serialization
