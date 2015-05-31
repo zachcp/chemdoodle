@@ -10,16 +10,16 @@ chemdoodle <- function(message, width = NULL, height = NULL) {
   # forward options using x
   x = list(
     message = message,
-    width=width,
+    width = width,
     height=height,
-    json = smiles_to_json("CCC")
+    json = smiles_to_json("CC")
     #json = jsonlite::toJSON(list(m= c( a=(y=0,x=0))))
-    
+
   )
-  
+
   #modify JSON serialization
   attr(x, 'TOJSON_ARGS') <- list(dataframe=c("rows"))
-  
+
   # create widget
   htmlwidgets::createWidget(
     name = 'chemdoodle',
