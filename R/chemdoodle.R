@@ -24,8 +24,12 @@ chemdoodle <- function(smiles, width = 500, height = 500, bondscale=14.4) {
     x = x,
     width = width,
     height = height,
-    package = 'chemdoodle'
-  )
+    package = 'chemdoodle',
+    sizingPolicy = htmlwidgets::sizingPolicy(
+        viewer.padding = 0,
+        viewer.paneHeight = 500,
+        browser.fill = TRUE)
+    )
 }
 
 #' Widget output function for use in Shiny
