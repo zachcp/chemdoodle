@@ -6,7 +6,7 @@
 #' @importFrom rcdk generate.2d.coordinates
 #'
 #' @return IAtomContainer with coordinates
-#' @export
+#' @keywords internal
 #'
 mol_from_smiles <- function(smiles){
     smi <- parse.smiles(smiles)
