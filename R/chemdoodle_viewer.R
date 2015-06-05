@@ -1,4 +1,4 @@
-#' ChemDoodle Viewer
+#' ChemDoodle Viewer Canvas
 #'
 #' Widget that accepts a SMILES string and visualizes it using ChemDoodle
 #'
@@ -26,7 +26,7 @@
 #'
 #'
 #' @export
-chemdoodle <- function(smiles,
+chemdoodle_viewer <- function(smiles,
                        width = 500,
                        height = 500,
                        bondscale=14.4,
@@ -86,7 +86,7 @@ chemdoodle <- function(smiles,
 
   # create widget
   htmlwidgets::createWidget(
-    name = 'chemdoodle',
+    name = 'chemdoodle_viewer',
     x = x,
     width = width,
     height = height,
@@ -101,7 +101,7 @@ chemdoodle <- function(smiles,
 #' Widget output function for use in Shiny
 #'
 #' @export
-chemdoodleOutput <- function(outputId, width = '100%', height = '400px'){
+chemdoodle_viewerOutput <- function(outputId, width = '100%', height = '400px'){
   shinyWidgetOutput(outputId, 'chemdoodle', width, height, package = 'chemdoodle')
 }
 
