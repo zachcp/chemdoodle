@@ -7,5 +7,7 @@ the [HTMLWidgets](http://www.htmlwidgets.org/) package, and the
 
 ```[R]
 library(chemdoodle)
-chemdoodle("C1CCCCC", bondscale=50)
+chemdoodle_viewer("C1CCCCC")
+chemdoodle_transform("C1CCCCC")
+chemdoodle_slideshow(c("C1CCCCC1", "CNCNCNC1CCCCC1"), 500,500, bondscale=15)
 ```
