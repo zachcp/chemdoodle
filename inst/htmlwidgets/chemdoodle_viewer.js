@@ -1,6 +1,6 @@
 HTMLWidgets.widget({
 
-    name: 'chemdoodle',
+    name: 'chemdoodle_viewer',
 
     type: 'output',
 
