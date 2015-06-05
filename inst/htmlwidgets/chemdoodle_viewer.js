@@ -34,33 +34,32 @@ HTMLWidgets.widget({
         mol.scaleToAverageBondLength( x.bondscale );
 
         //Create Canvas Element
-        var viewercanves = new ChemDoodle.ViewerCanvas("viewer2", x.width, x.height);
+        var viewercanvas = new ChemDoodle.ViewerCanvas( canvas.id, x.width, x.height);
 
-        viewercanves.specs.bonds_saturationWidth_2D = 0.18;
-        viewercanves.specs.bonds_hashSpacing_2D = 2.5;
-        viewercanves.specs.backgroundColor = x.backgroundColor;
-        viewercanves.specs.scale = x.scale;
+        viewercanvas.specs.bonds_saturationWidth_2D = 0.18;
+        viewercanvas.specs.bonds_hashSpacing_2D = 2.5;
+        viewercanvas.specs.backgroundColor = x.backgroundColor;
+        viewercanvas.specs.scale = x.scale;
         // atom display info
-        viewercanves.specs.atoms_font_size_2D = x.atoms_font_size_2D;
-        viewercanves.specs.atoms_font_families_2D = x.atoms_font_families_2D;
-        viewercanves.specs.atoms_font_italic_2D = x.atoms_font_italic_2D;
-        viewercanves.specs.atoms_circleDiameter_2D = x.atoms_circleDiameter_2D;
-        viewercanves.specs.atoms_useJMOLColors = x.atoms_useJMOLColors;
-        viewercanves.specs.atoms_useJMOLColors = x.atoms_useJMOLColors;
-        viewercanves.specs.atoms_usePYMOLColors = x.atoms_usePYMOLColors;
-        viewercanves.specs.atoms_implicitHydrogens_2D = x.atoms_implicitHydrogens_2D;
-        viewercanves.specs.atoms_displayTerminalCarbonLabels_2D = x.atoms_displayTerminalCarbonLabels_2D;
-        viewercanves.specs.atoms_displayAllCarbonLabels_2D = x.atoms_displayAllCarbonLabels_2D;
+        viewercanvas.specs.atoms_font_size_2D = x.atoms_font_size_2D;
+        viewercanvas.specs.atoms_font_families_2D = x.atoms_font_families_2D;
+        viewercanvas.specs.atoms_font_italic_2D = x.atoms_font_italic_2D;
+        viewercanvas.specs.atoms_circleDiameter_2D = x.atoms_circleDiameter_2D;
+        viewercanvas.specs.atoms_useJMOLColors = x.atoms_useJMOLColors;
+        viewercanvas.specs.atoms_useJMOLColors = x.atoms_useJMOLColors;
+        viewercanvas.specs.atoms_usePYMOLColors = x.atoms_usePYMOLColors;
+        viewercanvas.specs.atoms_implicitHydrogens_2D = x.atoms_implicitHydrogens_2D;
+        viewercanvas.specs.atoms_displayTerminalCarbonLabels_2D = x.atoms_displayTerminalCarbonLabels_2D;
+        viewercanvas.specs.atoms_displayAllCarbonLabels_2D = x.atoms_displayAllCarbonLabels_2D;
         // bond display info
-        viewercanves.specs.bonds_display = x.bonds_display;
-        viewercanves.specs.bonds_width_2D = x.bonds_width_2D;
-        viewercanves.specs.bonds_saturationWidth_2D = x.bonds_saturationWidth_2D;
-        viewercanves.specs.bonds_ends_2D = x.bonds_ends_2D;
-        viewercanves.specs.bonds_useJMOLColors = x.bonds_useJMOLColors;
-        viewercanves.specs.bonds_usePYMOLColors = x.bonds_usePYMOLColors;
-        viewercanves.specs.bonds_wedgeThickness_2D = x.bonds_wedgeThickness_2D;
-        viewercanves.specs.bonds_hashWidth_2D = x.bonds_hashWidth_2D;
-        viewercanves.loadMolecule(mol);
-
+        viewercanvas.specs.bonds_display = x.bonds_display;
+        viewercanvas.specs.bonds_width_2D = x.bonds_width_2D;
+        viewercanvas.specs.bonds_saturationWidth_2D = x.bonds_saturationWidth_2D;
+        viewercanvas.specs.bonds_ends_2D = x.bonds_ends_2D;
+        viewercanvas.specs.bonds_useJMOLColors = x.bonds_useJMOLColors;
+        viewercanvas.specs.bonds_usePYMOLColors = x.bonds_usePYMOLColors;
+        viewercanvas.specs.bonds_wedgeThickness_2D = x.bonds_wedgeThickness_2D;
+        viewercanvas.specs.bonds_hashWidth_2D = x.bonds_hashWidth_2D;
+        viewercanvas.loadMolecule(mol);
     }
 });
