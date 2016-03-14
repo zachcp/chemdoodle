@@ -31,10 +31,13 @@ HTMLWidgets.widget({
 
     //Create Canvas Element
 
+
     var sketchercanvas = new ChemDoodle.SketcherCanvas(canvas.id,
                                                        x.width,
                                                        x.height,
                                                        {useServices:false, oneMolecule:true});
+
+
 
     sketchercanvas.specs.bonds_saturationWidth_2D = 0.18;
     sketchercanvas.specs.bonds_hashSpacing_2D = 2.5;
@@ -60,6 +63,7 @@ HTMLWidgets.widget({
     sketchercanvas.specs.bonds_usePYMOLColors = x.bonds_usePYMOLColors;
     sketchercanvas.specs.bonds_wedgeThickness_2D = x.bonds_wedgeThickness_2D;
     sketchercanvas.specs.bonds_hashWidth_2D = x.bonds_hashWidth_2D;
+    sketchercanvas.repaint();
 
   }
 });
