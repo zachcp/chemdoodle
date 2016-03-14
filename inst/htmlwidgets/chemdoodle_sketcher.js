@@ -35,7 +35,10 @@ HTMLWidgets.widget({
     var sketchercanvas = new ChemDoodle.SketcherCanvas(canvas.id,
                                                        x.width,
                                                        x.height,
-                                                       {useServices:false, oneMolecule:true});
+                                                       {useServices:false,
+                                                        oneMolecule:true,
+                                                        includeToolbar:true
+                                                       });
 
 
 
