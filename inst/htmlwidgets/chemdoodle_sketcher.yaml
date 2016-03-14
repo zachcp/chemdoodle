@@ -1,0 +1,15 @@
+dependencies:
+ - name: chemdoodleweb
+   version: 7.0.1
+   src: "htmlwidgets/lib/chemdoodle"
+   script: js/ChemDoodleWeb.js
+   stylesheet: css/ChemDoodleWeb.css
+ - name: jqueryui
+   version: 1.10.3
+   stylesheet: css/jquery-ui-1.10.3.custom.css
+ - name: chemdoodlewebui
+   version: 7.0.1
+   src: "htmlwidgets/lib/chemdoodle"
+   script: js/ChemDoodleWeb-uis.js
+   #css: css/jquery-ui-1.10.3.custom.css
+
