@@ -18,6 +18,9 @@ HTMLWidgets.widget({
 
   renderValue: function(el, x, instance) {
     //sketcher cnavas defined in chemdoodle_sketcher.R
+    //  we attached it to el
+    
+    var sketchercanvas = el.sketcher;
 
     sketchercanvas.specs.bonds_saturationWidth_2D = 0.18;
     sketchercanvas.specs.bonds_hashSpacing_2D = 2.5;
