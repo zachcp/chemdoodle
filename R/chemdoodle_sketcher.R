@@ -97,6 +97,34 @@ chemdoodle_sketcher <- function(
   )
 }
 
+
+#' @import htmltools
+chemdoodle_sketcher_html <- function(id, style, class, ...){
+  tagList(
+    tags$div(
+      id = id,
+      class = class,
+      style = style,
+      tags$script(
+        "
+        ChemDoodle.ELEMENT['H'].jmolColor = 'black';
+        ChemDoodle.ELEMENT['S'].jmolColor = '#B9A130';
+        var sketcher = new ChemDoodle.SketcherCanvas('sketcher', 350, 250,{useServices:true, oneMolecule:true});
+        sketcher.specs.atoms_displayTerminalCarbonLabels_2D = true;
+        sketcher.specs.atoms_useJMOLColors = true;
+        sketcher.specs.bonds_clearOverlaps_2D = true;
+        sketcher.specs.bonds_overlapClearWidth_2D = 2;
+        sketcher.repaint();
+        function alertMolecule(mol){
+        var message = 'This molecule contains '+mol.atoms.length+' atoms and '+mol.bonds.length+' bonds.';
+        alert(message);
+        }
+        "
+      )
+      )
+      )
+}
+
 #' Widget output function for use in Shiny
 #'
 #' @export
