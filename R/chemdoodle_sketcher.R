@@ -4,7 +4,7 @@
 #'
 #' @import htmlwidgets
 #'
-#' #: background color of the canvas, set this to undefined to create a see-through canvas
+#' background color of the canvas, set this to undefined to create a see-through canvas
 #' scale of the canvas, set this after the molecule has been loaded, then repaint the canvas
 #'  atom text font size for 2D depiction
 #'  the atom text font families, families cascade through the array if not found on the users computer; for 2D depiction
@@ -105,13 +105,20 @@ chemdoodle_sketcher_html <- function(id, style, class, ...){
       id = id,
       class = class,
       style = style,
-      tags$script(
+      tags$script(sprintf(
 "
-var sketcher = new ChemDoodle.SketcherCanvas('sketcher', 350, 250, {useServices:false, oneMolecule:true});
-"
-      )
-      )
-      )
+var sketcher = new ChemDoodle.SketcherCanvas(
+  'sketcher',
+  350, 250,
+  {useServices:false, oneMolecule:true}
+);
+//assign the sketcher using expando
+//  so that we can access it in the htmlwidget render
+document.getElementById('%s').sketcher = sketcher;
+"        
+      ,id))
+    )
+  )
 }
 
 #' Widget output function for use in Shiny
