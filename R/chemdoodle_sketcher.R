@@ -110,7 +110,7 @@ chemdoodle_sketcher_html <- function(id, style, class, ...){
 "
 var sketcher = new ChemDoodle.SketcherCanvas(
   'sketcher',
-  350, 250,
+  570, 440,
   {useServices:false, oneMolecule:true}
 );
 
@@ -118,7 +118,7 @@ var sketcher = new ChemDoodle.SketcherCanvas(
 //  so that we can access it in the htmlwidget render
 document.getElementById('%s').sketcher = sketcher;
 "        
-      ,id))
+       ,id))
     )
   )
 }
