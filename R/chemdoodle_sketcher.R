@@ -3,6 +3,7 @@
 #' Widget that creates a ChemDoodle Sketcher
 #'
 #' @import htmlwidgets
+#' @import htmltools
 #'
 #' background color of the canvas, set this to undefined to create a see-through canvas
 #' scale of the canvas, set this after the molecule has been loaded, then repaint the canvas
@@ -112,6 +113,7 @@ var sketcher = new ChemDoodle.SketcherCanvas(
   350, 250,
   {useServices:false, oneMolecule:true}
 );
+
 //assign the sketcher using expando
 //  so that we can access it in the htmlwidget render
 document.getElementById('%s').sketcher = sketcher;
