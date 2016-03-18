@@ -8,10 +8,11 @@ Maintainer: Zach Charlop-Powers <zcharlop@rockefeller.edu>
 Description: Create nice looking HTML-based molecules
 License: GPL
 LazyData: TRUE
+Depends:
+  rcdk (>= 3.3.0),
+  rcdklibs (>= 1.5.8.3)
 Imports:
     htmlwidgets (>= 0.4),
-    rcdk (>= 3.3.0),
-    rcdklibs (>= 1.5.8.3),
     dplyr (>= 0.4.0),
     shiny,
     miniUI
