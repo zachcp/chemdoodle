@@ -2,11 +2,11 @@
 % Please edit documentation in R/chemdoodle_sketcher_gadgets.R
 \name{drawMolecule}
 \alias{drawMolecule}
-\title{sketcher}
+\title{Initiates the ChemDoodle Sketcher}
 \usage{
-drawMolecule()
+drawMolecule(width = 600, height = 600)
 }
 \description{
-helpful:https://ryouready.wordpress.com/2013/11/20/sending-data-from-client-to-server-and-back-using-shiny/
+helpful website:https://ryouready.wordpress.com/2013/11/20/sending-data-from-client-to-server-and-back-using-shiny/
 }
 
