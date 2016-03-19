@@ -7,6 +7,7 @@ the [HTMLWidgets](http://www.htmlwidgets.org/) package, and the
 
 ```[R]
 library(chemdoodle)
+
 chemdoodle_viewer("C1CCCCC1")
 chemdoodle_transform("C1CCCCC1")
 chemdoodle_slideshow(c("C1CCCCC1", "CNCNCNC1CCCCC1"), 500,500, bondscale=15)
@@ -21,5 +22,8 @@ moljson <- drawMolecule()
 # processed the Molecule JSON to a CDK AtomContainer - this can be saved,
 # written to Smiles etc.
 mol <- processChemDoodleJson(moljson)
+
+#convert to SMILES
+smi <- toSmiles(mol)
 
 ```

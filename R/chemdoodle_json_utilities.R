@@ -76,10 +76,14 @@ createAtom <- function(atom){
 processChemDoodleJson <- function(moljson){
   
   # some CDK Definitions
-  Bond  <- J("org.openscience.cdk.Bond")
-  single <- .jfield("org.openscience.cdk.interfaces.IBond$Order",,"SINGLE")
-  double <- .jfield("org.openscience.cdk.interfaces.IBond$Order",,"DOUBLE")
-  triple <- .jfield("org.openscience.cdk.interfaces.IBond$Order",,"TRIPLE")
+  Bond        <- J("org.openscience.cdk.Bond")
+  Matcher     <- J("org.openscience.cdk.atomtype.CDKAtomTypeMatcher")
+  Manipulator <- J("org.openscience.cdk.tools.manipulator.AtomTypeManipulator")
+  AddHydrogen <- J("org.openscience.cdk.tools.CDKHydrogenAdder")
+  
+  single  <- .jfield("org.openscience.cdk.interfaces.IBond$Order",,"SINGLE")
+  double  <- .jfield("org.openscience.cdk.interfaces.IBond$Order",,"DOUBLE")
+  triple  <- .jfield("org.openscience.cdk.interfaces.IBond$Order",,"TRIPLE")
   
   # AtomContainer
   mol <- .jnew("org.openscience.cdk.AtomContainer")
@@ -103,5 +107,28 @@ processChemDoodleJson <- function(moljson){
     if (bondorder == 3) newbond$setOrder(triple)
     mol$addBond(newbond)
   }
+  
+  # Fix Implicit Hydrogens
+  builder <- mol$getBuilder()
+  matcher <- Matcher$getInstance(builder)
+  
+  for (i in 0:(mol$getAtomCount()-1)) {
+    atm      <- mol$getAtom(i)
+    atomtype <- matcher$findMatchingAtomType(mol, atm)
+    Manipulator$configure(atm, atomtype)
+  }
+  adder <- AddHydrogen$getInstance(mol$getBuilder())
+  adder$addImplicitHydrogens(mol)
+  
   return(mol)
+}
+
+#' CDK AtomContainer to Smiles
+#'
+#' @export
+toSmiles <- function(mol){
+  Smiles  <- J("org.openscience.cdk.smiles.SmilesGenerator")
+  smigen  <- new(Smiles)$unique()
+  smigen$create(mol)
+  return(smigen$create(mol))
 }
