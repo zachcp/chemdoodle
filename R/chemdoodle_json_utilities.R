@@ -160,7 +160,7 @@ toChemDoodle <- function(mol){
     atomcoords <- atom$getPoint2d()
     atomdata <- list(l = atomtype, x = atomcoords$x, y = atomcoords$y)
     #print(atomdata)
-    jmol$a[i] <- list(atomdata)
+    jmol$a[i+1] <- list(atomdata)
   }
   
   #loop through bonds
@@ -177,8 +177,8 @@ toChemDoodle <- function(mol){
     if (bondorder == "TRIPLE") bondnumber <- 3
     
     
-    list(b = atom1n, e = atom2n , o = bondorder)
-    jmol$b[i] <- list(bonddata)
+    bonddata <- list(b = atom1n, e = atom2n , o = bondnumber)
+    jmol$b[i+1] <- list(bonddata)
   }
   
   return(jmol)
