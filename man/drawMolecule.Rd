@@ -4,7 +4,7 @@
 \alias{drawMolecule}
 \title{Initiates the ChemDoodle Sketcher}
 \usage{
-drawMolecule(width = 600, height = 600)
+drawMolecule(mol = NULL, width = 600, height = 600)
 }
 \description{
 helpful website:https://ryouready.wordpress.com/2013/11/20/sending-data-from-client-to-server-and-back-using-shiny/

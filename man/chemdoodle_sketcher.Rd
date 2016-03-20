@@ -4,10 +4,10 @@
 \alias{chemdoodle_sketcher}
 \title{ChemDoodle Sketcher Canvas}
 \usage{
-chemdoodle_sketcher(width = 500, height = 500, bondscale = 14.4,
-  backgroundColor = "white", scale = 1, atoms_font_size_2D = 12,
-  atoms_font_families_2D = c("Helvetica", "Arial", "Dialog"),
-  atoms_font_italic_2D = FALSE, atoms_circleDiameter_2D = 10,
+chemdoodle_sketcher(mol = NULL, width = 500, height = 500,
+  bondscale = 14.4, backgroundColor = "white", scale = 1,
+  atoms_font_size_2D = 12, atoms_font_families_2D = c("Helvetica", "Arial",
+  "Dialog"), atoms_font_italic_2D = FALSE, atoms_circleDiameter_2D = 10,
   atoms_useJMOLColors = FALSE, atoms_usePYMOLColors = FALSE,
   atoms_implicitHydrogens_2D = TRUE,
   atoms_displayTerminalCarbonLabels_2D = TRUE,
