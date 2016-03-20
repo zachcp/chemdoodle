@@ -27,7 +27,7 @@
 #'
 #'
 #' @export
-chemdoodle_sketcher <- function(
+chemdoodle_sketcher <- function(mol=NULL,
                               width = 500,
                               height = 500,
                               bondscale=14.4,
@@ -54,8 +54,15 @@ chemdoodle_sketcher <- function(
                               bonds_wedgeThickness_2D = 0.22,
                               bonds_hashWidth_2D = 1) {
 
+  if (is.null(mol)) {
+    moldata <- NULL
+  } else if (attr(mol, "class") == "jobjRef") {
+    moldata <- toChemDoodle(mol)
+  }
+    
   # forward options using x
   x = list(
+    mol = moldata,
     width = width,
     height = height,
     bondscale = bondscale,

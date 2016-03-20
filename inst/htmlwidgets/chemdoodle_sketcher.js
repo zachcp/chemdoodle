@@ -1,3 +1,5 @@
+var params;
+
 HTMLWidgets.widget({
 
   name: 'chemdoodle_sketcher',
@@ -19,7 +21,7 @@ HTMLWidgets.widget({
   renderValue: function(el, x, instance) {
     //sketcher cnavas defined in chemdoodle_sketcher.R
     //  we attached it to el
-    
+    params = x;
     var sketchercanvas = el.sketcher;
 
     sketchercanvas.specs.bonds_saturationWidth_2D = 0.18;
@@ -46,7 +48,15 @@ HTMLWidgets.widget({
     sketchercanvas.specs.bonds_usePYMOLColors = x.bonds_usePYMOLColors;
     sketchercanvas.specs.bonds_wedgeThickness_2D = x.bonds_wedgeThickness_2D;
     sketchercanvas.specs.bonds_hashWidth_2D = x.bonds_hashWidth_2D;
-    sketchercanvas.repaint();
+    //sketchercanvas.repaint();
 
+    // if x has molecule information, load it into the canvas
+    console.log(x);
+    if (x.mol) {
+      mol1 =  new ChemDoodle.io.JSONInterpreter().molFrom(x.mol);
+      sketcher.loadMolecule(mol1);
+      sketcher.center();
+      //sketcher.repaint()
+    }
   }
 });
