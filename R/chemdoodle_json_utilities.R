@@ -98,7 +98,7 @@ processChemDoodleJson <- function(moljson){
   for (bond in moljson$b){
     # Note: each index has to be incremented by one becasue lists are 1-indexed
     beginindex <- bond$b + 1
-    endindex   <- bond$b + 1
+    endindex   <- bond$e + 1
     bondorder  <- bond$o
     newbond    <- new(Bond, atoms[[beginindex]], atoms[[endindex]])
     if (is.null(bondorder)) bondorder <- 1
