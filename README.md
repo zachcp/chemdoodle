@@ -25,8 +25,11 @@ moljson <- drawMolecule()
 # written to Smiles etc.
 mol <- processChemDoodleJson(moljson)
 
-#convert to SMILES
+# convert to SMILES
 smi <- toSmiles(mol)
+
+# convert to InChi
+inchi <- toInChi(mol)
 
 # try sending a molecule to the sketcher (needs work)
 drawMolecule(mol=mol)

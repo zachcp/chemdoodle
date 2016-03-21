@@ -133,6 +133,14 @@ toSmiles <- function(mol){
   return(smigen$create(mol))
 }
 
+#' CDK AtomContainer to InChi Key
+#'
+#' @export
+toInChi <- function(mol){
+  factory <- .jnew("org.openscience.cdk.inchi.InChIGeneratorFactory")$getInstance()
+  gen     <- factory$getInChIGenerator(mol)
+  return(gen$getInchiKey())
+}
 #' CDK AtomContainer to ChemDoodle JSON
 #'
 #' @export
