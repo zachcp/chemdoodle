@@ -3,6 +3,7 @@
 #' helpful website:https://ryouready.wordpress.com/2013/11/20/sending-data-from-client-to-server-and-back-using-shiny/
 #' 
 #' @import miniUI
+#' @importFrom shiny runGadget dialogViewer
 #' @export
 drawMolecule <- function(mol=NULL, width=600, height=600) {
   

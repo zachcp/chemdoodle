@@ -35,3 +35,8 @@ inchi <- toInChi(mol)
 drawMolecule(mol=mol)
 
 ```
+
+```[R]
+# you can also try a minimal shiny example
+shiny::runApp(appDir = "examples/minimalshinyapp/")
+```
