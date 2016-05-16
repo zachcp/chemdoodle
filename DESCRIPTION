@@ -9,8 +9,8 @@ Description: Create nice looking HTML-based molecules
 License: GPL
 LazyData: TRUE
 Depends:
-  rcdk (>= 3.3.0),
-  rcdklibs (>= 1.5.12)
+  rcdk (>= 3.3.5),
+  rcdklibs (>= 1.5.13)
 Imports:
     htmlwidgets (>= 0.4),
     dplyr (>= 0.4.0),
