@@ -1,3 +1,14 @@
+---
+title: "ChemdooleBasics.Rmd"
+author: "zachcp"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message=FALSE)
+```
+
 # ChemDoodle WebComponents plus HTMLWidgets
 
 This repo is for the creation of an HTMLWidget for visualizing
@@ -5,17 +16,17 @@ moleules based on the [ChemDoodle WebComponent](http://web.chemdoodle.chttps://g
 the [HTMLWidgets](http://www.htmlwidgets.org/) package, and the
 [Chemistry Development Kit](https://github.com/cdk) via [rCDK]()
 
-Warning: development in flux and liable to break before the release of 1.0!
+Warning: development in flux and liable to break 1.0!
 
-```[R]
+```{r}
 library(chemdoodle)
 
-chemdoodle_viewer("C1CCCCC1")
-chemdoodle_transform("C1CCCCC1")
+chemdoodle_viewer("C1CCCCC1", width = 100, height = 100)
+chemdoodle_transform("C1CCCCC1", width = 100, height = 100)
 chemdoodle_slideshow(c("C1CCCCC1", "CNCNCNC1CCCCC1"), 500,500, bondscale=15)
 ```
 
-```[R]
+```{r, eval=FALSE}
 #experimetal/new features
 
 # gets a molecule from the chemdoodle sketcher
@@ -36,7 +47,7 @@ drawMolecule(mol=mol)
 
 ```
 
-```[R]
+```{r, eval=FALSE}
 # you can also try a minimal shiny example
 shiny::runApp(appDir = "examples/minimalshinyapp/")
 ```
