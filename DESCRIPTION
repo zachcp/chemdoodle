@@ -9,11 +9,11 @@ Description: Create nice looking HTML-based molecules
 License: GPL
 LazyData: TRUE
 Depends:
-  rcdk (>= 3.3.5),
+  rcdk (>= 3.3.8),
   rcdklibs (>= 1.5.13)
 Imports:
-    htmlwidgets (>= 0.4),
-    dplyr (>= 0.4.0),
-    shiny,
-    miniUI
+    htmlwidgets (>= 0.8),
+    dplyr (>= 0.5.0),
+    shiny (>= 0.14.0),
+    miniUI (>= 0.1.0)
 RoxygenNote: 5.0.1
