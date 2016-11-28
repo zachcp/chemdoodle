@@ -9,22 +9,40 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE, message=FALSE)
 ```
 
-# ChemDoodle WebComponents plus HTMLWidgets
+## ChemDoodle WebComponents 
 
 This repo is for the creation of an HTMLWidget for visualizing
 moleules based on the [ChemDoodle WebComponent](http://web.chemdoodle.chttps://github.com/rajarshi/cdkr/tree/master/rcdkom/) library,
 the [HTMLWidgets](http://www.htmlwidgets.org/) package, and the
-[Chemistry Development Kit](https://github.com/cdk) via [rCDK]()
+[Chemistry Development Kit](https://github.com/cdk) via [rCDK](https://github.com/rajarshi/cdkr/tree/master/rcdk). **Warning: development in flux and liable to break until version 1.0!**
 
-Warning: development in flux and liable to break 1.0!
+### Basic Viewer
 
 ```{r}
 library(chemdoodle)
-
 chemdoodle_viewer("C1CCCCC1", width = 100, height = 100)
-chemdoodle_transform("C1CCCCC1", width = 100, height = 100)
-chemdoodle_slideshow(c("C1CCCCC1", "CNCNCNC1CCCCC1"), 500,500, bondscale=15)
 ```
+
+### Transform Canvas
+
+```{r}
+chemdoodle_transform("C1CCCCC1", width = 100, height = 100)
+```
+
+
+### Slideshow Canvas
+
+```{r}
+chemdoodle_slideshow(c("C1CCCCC1", "CNCNCNC1CCCCC1", "CN1C=NC2=C1C(=O)N(C(=O)N2C)C",
+                       "CC1=C(C=C(C2=C1C(=C)OC2=O)OC)OC"), 200,200, bondscale=15)
+
+```
+
+### Sketcher
+
+The ChemDoodle Sketcher needs extra work for functionality. You can use `drawMolecule()` to create a seketcher and the molecule is captured as ChemDoodle JSON which can be converted to
+a CDK Atom and be passed around, converter or whatever. Currently round-tripping (putting the molecule back) doesn't work because there are some issues around properly scaling the compound.
+
 
 ```{r, eval=FALSE}
 #experimetal/new features
@@ -46,6 +64,8 @@ inchi <- toInChi(mol)
 drawMolecule(mol=mol)
 
 ```
+
+### Access the Sketcher as a ShinyApp 
 
 ```{r, eval=FALSE}
 # you can also try a minimal shiny example
