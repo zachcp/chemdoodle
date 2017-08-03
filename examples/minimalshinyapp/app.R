@@ -2,9 +2,9 @@ library(shiny)
 library(miniUI)
 library(chemdoodle)
 
-# Super-Simple Shiny App that shows how chemdoodle can be sued within shiny.
+# Super-Simple Shiny App that shows how chemdoodle can be used within shiny.
 # 
-# Draw a molecule. When you hit the butotn, it will display the count of the molecules
+# Draw a molecule. When you hit the button, it will display the count of the molecules
 # in the sketcher frame.
 #
 
