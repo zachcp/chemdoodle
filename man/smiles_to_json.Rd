@@ -9,4 +9,3 @@ smiles_to_json(smiles)
 \description{
 smiles string -> chemdoodle JSON
 }
-

@@ -9,4 +9,3 @@ processChemDoodleJson(moljson)
 \description{
 Take a Chemdoodle R-JSON Object and convert it into a CDK Molecule
 }
-

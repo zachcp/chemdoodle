@@ -20,4 +20,3 @@ chemdoodle_sketcher(mol = NULL, width = 500, height = 500,
 \description{
 Widget that creates a ChemDoodle Sketcher
 }
-

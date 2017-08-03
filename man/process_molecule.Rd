@@ -7,10 +7,9 @@
 process_molecule(mol)
 }
 \value{
-list compatable with ChemDoodle Webcomponenets API
+list compatible with ChemDoodle Webcomponenets API
 }
 \description{
 create JSON from an AtomContainer
 }
 \keyword{internal}
-

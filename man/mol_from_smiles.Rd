@@ -13,4 +13,3 @@ IAtomContainer with coordinates
 get an AtomContainer with 2d coords from a smiles string
 }
 \keyword{internal}
-

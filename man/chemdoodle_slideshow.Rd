@@ -20,4 +20,3 @@ chemdoodle_slideshow(smiles_vec, width = 500, height = 500,
 \description{
 Widget that accepts a SMILES string and visualizes it using ChemDoodle
 }
-

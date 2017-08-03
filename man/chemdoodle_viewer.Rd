@@ -20,4 +20,3 @@ chemdoodle_viewer(smiles, width = 500, height = 500, bondscale = 14.4,
 \description{
 Widget that accepts a SMILES string and visualizes it using ChemDoodle
 }
-
