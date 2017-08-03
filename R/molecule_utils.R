@@ -20,7 +20,7 @@ mol_from_smiles <- function(smiles){
 #' @importFrom rcdk get.atoms
 #' @importFrom rcdk get.bonds
 #'
-#' @return list compatable with ChemDoodle Webcomponenets API
+#' @return list compatible with ChemDoodle Webcomponenets API
 #' @keywords internal
 process_molecule <- function(mol){
     #atom and bond info
