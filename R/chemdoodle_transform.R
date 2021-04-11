@@ -102,7 +102,7 @@ chemdoodle_transform <- function(smiles,
 #'
 #' @export
 chemdoodle_transformOutput <- function(outputId, width = '100%', height = '400px'){
-  shinyWidgetOutput(outputId, 'chemdoodle', width, height, package = 'chemdoodle')
+  shinyWidgetOutput(outputId, 'chemdoodle_transform', width, height, package = 'chemdoodle')
 }
 
 #' Widget render function for use in Shiny
@@ -110,5 +110,5 @@ chemdoodle_transformOutput <- function(outputId, width = '100%', height = '400px
 #' @export
 renderChemdoodle <- function(expr, env = parent.frame(), quoted = FALSE) {
   if (!quoted) { expr <- substitute(expr) } # force quoted
-  shinyRenderWidget(expr, chemdoodleOutput, env, quoted = TRUE)
+  shinyRenderWidget(expr, chemdoodle_transformOutput, env, quoted = TRUE)
 }
