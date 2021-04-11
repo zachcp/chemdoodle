@@ -1,7 +1,7 @@
 Package: chemdoodle
 Type: Package
 Title: Htmlwigdets interace to Chemdoodle Web Components
-Version: 0.3.0
+Version: 0.4.0
 Date: 2016-11-27
 Authors@R: c(person('Zachary', 'Charlop-Powers', role=c('cre','aut',"cph"), email='zach.charlop.powers@gmail.com'))
 Description: Create nice looking HTML-based molecules
